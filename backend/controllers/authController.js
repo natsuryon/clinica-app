@@ -23,7 +23,7 @@ exports.cadastro = async (req, res) => {
     }
 
     if (!validarEmail(email)) {
-      return res.status(400).json({ msg: "Email inválido." });
+      return res.status(400).json({ msg: "E-mail inválido." });
     }
 
     if (!validarSenha(senha)) {
@@ -35,7 +35,7 @@ exports.cadastro = async (req, res) => {
     // Verificar se email já existe
     const usuarioExistente = await User.findOne({ email });
     if (usuarioExistente) {
-      return res.status(400).json({ msg: "Email já cadastrado." });
+      return res.status(400).json({ msg: "E-mail já cadastrado." });
     }
 
     const hash = await bcrypt.hash(senha, 10);
@@ -61,7 +61,7 @@ exports.login = async (req, res) => {
     const { email, senha } = req.body;
 
     if (!email || !senha) {
-      return res.status(400).json({ msg: "Email e senha são obrigatórios." });
+      return res.status(400).json({ msg: "E-mail e senha são obrigatórios." });
     }
 
     const user = await User.findOne({ email });
