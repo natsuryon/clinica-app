@@ -115,7 +115,7 @@ async function agendar() {
     v-if="alertaClima"
     style="background-color: #fff3cd; padding: 10px; margin-top: 20px; border-radius: 5px"
   >
-    <strong>⚠️ Alerta do Tempo:</strong>
+    <strong>Alerta do Tempo:</strong>
     <p>{{ alertaClima }}</p>
   </div>
 </template>
